@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Selfie project</title>
+  </head>
+  <body>
+<p>Hello</p>
+<a href="index.html">hello</a><span>|</span><a href="goodbye.html">goodbye</a>
+<script>
+if('geolocation' in navigator) {
+  console.log("geolocation available");
+  navigator.geolocation.getCurrentPosition((position) => {
+  console.log(position.coords.latitude, position.coords.longitude);
+});
+} else {
+  console.log('nope');
+}
+
+</script>
+  </body>
+</html>
