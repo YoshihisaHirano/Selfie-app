@@ -9,15 +9,18 @@
    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
   integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
   crossorigin=""></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.min.js"></script>
    <script type="module" src="sketch.js"></script>
   </head>
   <body>
 <a href="index.html">hello</a><span>|</span><a href="goodbye.html">goodbye</a>
-<p>Latitude: <span id="lat"></span> <br>
-  Longitude: <span id="lon"></span>
+<p>Latitude: <span id="lat">n/a</span> <br>
+  Longitude: <span id="lon">n/a</span>
 </p>
+<p>Enter your keyword here</p>
+<input type="text" name="keyword" value="" id="input">
+  <button id="geolocate" name="button">Submit</button>
   <div id="mapid" style=" height: 200px; width: 300px; "></div>
-  <button id="geolocate" name="button">Find and submit your position</button>
 <script>
 </script>
 

@@ -3,10 +3,39 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Selfie</title>
+    <title>Selfie app</title>
   </head>
   <body>
     <p>Goodbye</p>
     <a href="index.html">hello</a><span>|</span><a href="goodbye.html">goodbye</a>
+    <br>
+    <script>
+    getData();
+
+    async function getData() {
+    const resp = await fetch('/api');
+    const data = await resp.json();
+    console.log(data);
+
+    const root = document.createElement('div');
+    document.body.appendChild(root);
+    for(let elt of data) {
+      const keyword = document.createElement('div');
+      keyword.textContent = `The keyword:  ${elt.keyword}`;
+
+      const location = document.createElement('div');
+      location.textContent = `The location:  ${elt.lat}, ${elt.lon}`;
+
+      const dateString = new Date(elt.timestamp).toLocaleString()
+      const date = document.createElement('div');
+      date.textContent = dateString;
+
+      root.append(keyword, location, date);
+      const linebreak = document.createElement('br');
+      root.appendChild(linebreak);
+    }
+}
+
+    </script>
   </body>
 </html>
